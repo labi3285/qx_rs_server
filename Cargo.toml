@@ -1,0 +1,64 @@
+[package]
+name = "qx_rs_server"
+version = "0.1.0"
+edition = "2021"
+
+authors = ["labi3285 <766043285@qq.com>"]
+description = "best practice of server in rust."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/labi3285/qx_rs_server"
+homepage = "https://github.com/labi3285/qx_rs_server"
+keywords = ["server", "axum"]
+categories = ["web", "api"]
+
+[dependencies]
+
+# ENV
+dotenv = "0.15.0"
+
+# BASE
+derive_more = {version = "1.0.0-beta", features=["from", "display"]}
+
+# TIME
+time = { version = "0.3.36", features = ["macros"] }
+chrono = "0.4.38"
+
+# WEB SERVER STRUCTURE
+tower = "0.4.13"
+tokio = { version = "1.37.0", features = ["full"] }
+axum-core = "0.4.3"
+axum = "0.7.5"
+askama = "0.12.1"
+
+# JSON SERILIZATION
+serde = { version="1.0.217", features = ["derive"] }
+serde_json = "1.0.117"
+serde_with = { version="3.8.1", features = ["chrono"] }
+
+# VALIDATION
+validator = "0.18.1"
+validator_derive = "0.18.1"
+
+# REQUEST
+reqwest = { version = "0.12.4", features = ["json"] }
+
+# LOG
+tracing = "0.1.40"
+tracing-appender = "0.2.3"
+tracing-error = "0.2.0"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+tracing-attributes = "0.1.27"
+
+# OTHER
+uuid = { version = "1.8.0", features = ["std", "v4", "v7", "fast-rng", "macro-diagnostics"] }
+hyper = "1.3.1"
+lazy_static = "1.4.0"
+once_cell = "1.19.0"
+snowflake = "1.3.0"
+rand = "0.8.5"
+
+
+
+
+
+
