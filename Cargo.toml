@@ -9,7 +9,7 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/labi3285/qx_rs_server"
 homepage = "https://github.com/labi3285/qx_rs_server"
 keywords = ["server", "axum"]
-categories = ["web", "api"]
+categories = ["web-programming"]
 
 [dependencies]
 
