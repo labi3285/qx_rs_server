@@ -1208,7 +1208,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "qx_server"
+name = "qx_rs_server"
 version = "0.1.0"
 dependencies = [
  "askama",

@@ -6,12 +6,28 @@ use crate::def::resp_json::Payload;
 
 impl Error {
     pub fn to_code(&self) -> i32 {
-        let mut code: i32 = -1;
-
-        code
+        match self {
+            Error::Env(_) => -1,
+            Error::ServerStart(_) => -2,
+            Error::ReadingHeaderFromRequest(_) => -2,
+            Error::Parsing(_) => -100,
+            Error::ThirdRequest(_) => -200,
+            Error::Paging(code, _) => *code,
+            Error::Custom(code, _) => *code,
+            Error::Io(_) => -1,
+        }
     }
     pub fn to_message(&self) -> String {
-        "".to_string()
+        match self {
+            Error::Env(err) => err.clone(),
+            Error::ServerStart(err) => err.clone(),
+            Error::ReadingHeaderFromRequest(err) => err.clone(),
+            Error::Parsing(err) => err.clone(),
+            Error::ThirdRequest(err) => err.clone(),
+            Error::Paging(_, msg) => msg.clone(),
+            Error::Custom(_, msg) => msg.clone(),
+            Error::Io(_) => "i/o error".to_string(),
+        }
     }
 }
 
